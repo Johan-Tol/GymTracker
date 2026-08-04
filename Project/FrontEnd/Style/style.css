@@ -1,0 +1,89 @@
+@property --main-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0f0f0f;
+}
+
+@property --secondary-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #00a0f0;
+}
+
+@property --text-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ffffff;
+}
+
+body {
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+
+div {
+    margin: 10px;
+}
+
+.tab {
+    width: 100%;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: large;
+}
+
+.tab:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+input, button {
+    margin: 10px;
+}
+
+.border {
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+p, h1 {
+    color: var(--text-color);
+}
+
+.container {
+    width: 30%;
+    height: 50vh;
+}
+
+form {
+    height: 100%;
+}
