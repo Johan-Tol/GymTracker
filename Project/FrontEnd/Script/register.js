@@ -1,4 +1,4 @@
-const apiRoute = "../../BackEnd";
+const apiRoute = "http://localhost:8080";
 
 let username = document.getElementById('username');
 let password = document.getElementById('password');
@@ -13,12 +13,23 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     }
     fetch(`${apiRoute}/register.php`, {
         method: 'POST',
-        headers: {},
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             username: username.value,
             password: password.value,
             email: email.value
         })
     })
-    .then(response => response.json());
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        if (response.success) {
+            alert("Registration successful!");
+            window.location.href = "login.html";
+        } else {
+            alert(response.message);
+        }
+    });
 });

@@ -1,19 +1,7 @@
-@property --main-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0f0f0f;
-}
-
-@property --secondary-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #00a0f0;
-}
-
-@property --text-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #ffffff;
+:root {
+    --main-color: #0f0f0f;
+    --secondary-color: #00a0f0;
+    --text-color: #ffffff;
 }
 
 body {
@@ -25,8 +13,11 @@ div {
     margin: 10px;
 }
 
-.tab {
+.width-100 {
     width: 100%;
+}
+
+.tab {
     font-family: Arial;
     font-weight: bold;
     font-size: large;
@@ -86,4 +77,11 @@ p, h1 {
 
 form {
     height: 100%;
+}
+
+@media (max-width: 768px) {
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

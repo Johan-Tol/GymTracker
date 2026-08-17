@@ -3,12 +3,15 @@
 require_once 'Connection.php';
 
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+    $body = file_get_contents('php://input');
+    $data = json_decode($body, true);
+
+    $username = $data['username'];
+    $password = $data['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);

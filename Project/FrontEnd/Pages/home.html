@@ -7,16 +7,51 @@
     <title>Home</title>
 </head>
 <body>
-    <header class="space-around row">
-        <div>
-            <h1>Gym Tracker</h1>
+    <header class="space-around row wrap">
+        <div class="width-100 center">
+            <h1 class="width-100">Gym Tracker</h1>
         </div>
-        <div class="tab border center"><p>Home</p></div>
-        <div class="tab border center"><p>Food</p></div>
-        <div class="tab border center"><p>Workouts</p></div>
-        <div class="tab border center"><p>Wellness</p></div>
-        <div class="tab border center" onclick="LoginButton()"><p id="loginText">Logout</p></div>
+        <div class="width-100 tab border center"><p>Home</p></div>
+        <div class="width-100 tab border center"><p>Food</p></div>
+        <div class="width-100 tab border center"><p>Workouts</p></div>
+        <div class="width-100 tab border center"><p>Wellness</p></div>
+        <div class="width-100 tab border center" onclick="LoginButton()"><p id="loginText">Logout</p></div>
     </header>
+    <div class="center">
+        <h1 id="goodmorningText">Good morning {Name}</h1>
+    </div>
+    <div class="border">
+        <h3>Today's Progress</h3>
+        <p>x% complete</p>
+        <p>x day streak</p>
+        <p>x/x exercises done</p>
+    </div>
+    <div class="border">
+        <h3>Next Workout</h3>
+        <p>{workout Name}</p>
+        <button>Start Workout</button>
+    </div>
+    <div class="border">
+        <h3>Quick Note</h3>
+        <button>Log PR</button>
+        <button>Edit schedule</button>
+        <button>Track meal</button>
+        <button>Progress photo</button>
+    </div>
+    <div class="border">
+        <h3>Weekly Stats</h3>
+        <p>x/x workouts done</p>
+        <p>x/x exercises done</p>
+        <p>x/x Calories Goal</p>
+    </div>
+    <div class="border">
+        <h3>Recent Records</h3>
+        <p>bench: 100kg</p>
+        <p>bench: 100kg</p>
+        <p>bench: 100kg</p>
+        <p>bench: 100kg</p>
+        <p>bench: 100kg</p>
+    </div>
 </body>
 </html>
 

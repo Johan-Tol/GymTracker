@@ -1,9 +1,14 @@
 <?php
 
-$servername = "localhost";
-$username = "GymTracker";
-$password = "J0tOL2007!";
-$dbname = "GymTracker";
+$host = getenv('DB_HOST') ?: 'db';
+$db   = getenv('DB_NAME') ?: 'gymtracker';
+$user = getenv('DB_USER') ?: 'appuser';
+$pass = getenv('DB_PASSWORD') ?: 'apppass';
 
-$dsn = "mysql:host=$servername;dbname=$dbname;charset=utf8mb4";
-$conn = new PDO($dsn, $username, $password);
+$pdo = new PDO(
+    "mysql:host=$host;dbname=$db;charset=utf8mb4",
+    $user,
+    $pass
+);
+
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -3,13 +3,16 @@
 require_once 'Connection.php';
 
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
+    $body = file_get_contents('php://input');
+    $data = json_decode($body, true);
 
-    $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
+    $username = $data['username'];
+    $password = password_hash($data['password'], PASSWORD_DEFAULT);
+    $email = $data['email'];
+
+    $stmt = $pdo->prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':email', $email);
