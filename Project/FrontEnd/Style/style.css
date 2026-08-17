@@ -13,8 +13,53 @@ div {
     margin: 10px;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
 .width-100 {
     width: 100%;
+}
+
+.logo {
+    color: var(--secondary-color);
+}
+
+.navbar {
+    cursor: pointer;
+    width: 50%;
+    min-width: 512px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 50px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.navbar a:hover {
+    color: var(--secondary-color);
+}
+
+.navbar a:active {
+    color: var(--secondary-color);
+}
+
+.--mobileNavbar {
+    display: none;
 }
 
 .tab {
@@ -28,7 +73,8 @@ div {
     cursor: pointer;
 }
 
-input, button {
+input,
+button {
     margin: 10px;
 }
 
@@ -66,7 +112,8 @@ input, button {
     justify-content: space-around;
 }
 
-p, h1 {
+p,
+h1 {
     color: var(--text-color);
 }
 
@@ -84,4 +131,50 @@ form {
         display: flex;
         flex-wrap: wrap;
     }
+}
+
+@media (max-width: 563px) {
+    .navbar {
+        display: none;
+    }
+
+    .--mobileNavbar {
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-top: #00a0f0 2px solid;
+    }
+
+    .--mobileNavbar a {
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        padding: 14px;
+        text-decoration: none;
+        color: var(--text-color);
+        background-color: var(--main-color);
+        border-left: #00a0f0 2px solid;
+    }
+
+    .--mobileNavbar a:hover {
+        cursor: pointer;
+        background-color: var(--secondary-color);
+    }
+
+    .--mobileNavbar a:active {
+        background-color: var(--secondary-color);
+    }
+
+    .--mobileNavbar a:first-child {
+        border-left: none;
+    }
+
+    .--mobileNavbar a:last-child {
+        border-right: none;
+    }
+
 }

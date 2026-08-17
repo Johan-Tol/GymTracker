@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/style.css">
     <title>Home</title>
 </head>
+
 <body>
-    <header class="space-around row wrap">
-        <div class="width-100 center">
-            <h1 class="width-100">Gym Tracker</h1>
-        </div>
-        <div class="width-100 tab border center"><p>Home</p></div>
-        <div class="width-100 tab border center"><p>Food</p></div>
-        <div class="width-100 tab border center"><p>Workouts</p></div>
-        <div class="width-100 tab border center"><p>Wellness</p></div>
-        <div class="width-100 tab border center" onclick="LoginButton()"><p id="loginText">Logout</p></div>
+    <header class="header space-around wrap">
+        <h1 class="logo">Gym Tracker</h1>
+        <nav class="navbar">
+            <a>Home</a>
+            <a>Food</a>
+            <a>Workouts</a>
+            <a>Wellness</a>
+            <div onclick="LoginButton()">
+                <a id="loginText">Logout</a>
+            </div>
+        </nav>
+        <nav class="--mobileNavbar">
+            <a>Home</a>
+            <a>Food</a>
+            <a>Workouts</a>
+            <a>Wellness</a>
+        </nav>
     </header>
     <div class="center">
         <h1 id="goodmorningText">Good morning {Name}</h1>
     </div>
-    <div class="border">
-        <h3>Today's Progress</h3>
-        <p>x% complete</p>
-        <p>x day streak</p>
-        <p>x/x exercises done</p>
+    <div class="border"></div>
+    <h3>Today's Progress</h3>
+    <p>x% complete</p>
+    <p>x day streak</p>
+    <p>x/x exercises done</p>
     </div>
     <div class="border">
         <h3>Next Workout</h3>
@@ -53,6 +63,7 @@
         <p>bench: 100kg</p>
     </div>
 </body>
+
 </html>
 
 <script src="../Script/script.js"></script>
